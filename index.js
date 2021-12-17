@@ -1,7 +1,18 @@
+class Calculator {
 
-const add = (numeros = '') => {
+    sum = (values) => {
 
-    if (numeros.length === 0) return 0;
+        if (!values) {
+            return 0;
+        }
+ 
+        let array = values.split(/,|\n|%|&|;/);
+        let total = 0;
+        
+        array.forEach(char => total += Number(char));
+
+        return total;
+    }
 }
 
-console.log(add());
+module.exports = Calculator;
